@@ -21,80 +21,65 @@
         </div>
         <div id="todo" class="content">
             <h1>To Do List</h1>
-            <input class="input-box" type="text">
-            <input class="add-button" type="button" value="ADD" placeholder="Add To List">
+            <input class="input-box" type="text" id="to-do-name" >
+            <input onclick="AddToDo()" class="add-button" type="button" value="ADD" placeholder="Add To List">
             <div class="to-do-table">
-                <table class="list-items">
+                
+                <table class="list-items" id="to-do-table-id">
                     <tr>
                         <th> Date </th>
                         <th> To Do </th>
-                        <th> Edit </th>
+                        <th> Edit/Delete </th>
+                    </tr>
+                    <!-- <tr>
+                        <td> 8-19-2019 </td>
+                        <td> Wash Clothes </td>
+                        <td>
+                            <button id="edit-button-id" onclick="showTextBox(this)" class="edit-button" >Edit</button>
+                            <button class="delete-button" onclick="deleteElement(this)">Delete</button>
+                        </td>
                     </tr>
                     <tr>
                         <td> 8-19-2019 </td>
-                        <td> Wash Clothes </td>
-                        <td> <input type="button" value="Edit"> </td>
-                    </tr>
-                    <tr>
-                        <td> 10-19-2019 </td>
-                        <td>  Doctor Appointment </td>
-                        <td> <input type="button" value="Edit"> </td>
-                    </tr>
-                    <tr>
-                        <td> 11-19-2019 </td>
-                        <td> Book a Train Ticket </td>
-                        <td> <input type="button" value="Edit"> </td>
-                    </tr>
-                    <tr>
-                        <td> 12-19-2019 </td>
-                        <td> Study Books </td>
-                        <td> <input type="button" value="Edit"> </td>
-                    </tr>
-                    <tr>
-                        <td> 12-19-2019 </td>
-                        <td> Study Books </td>
-                        <td> <input type="button" value="Edit"> </td>
-                    </tr>
-                    <tr>
-                        <td> 12-19-2019 </td>
-                        <td> Study Books </td>
-                        <td> <input type="button" value="Edit"> </td>
-                    </tr>
-                    <tr>
-                        <td> 12-19-2019 </td>
-                        <td> Study Books </td>
-                        <td> <input type="button" value="Edit"> </td>
-                    </tr>
-                    
+                        <td> Dry Clothes </td>
+                        <td>
+                            <button class="edit-button" >Edit</button>
+                            <button class="delete-button" onclick="deleteElement(this)">Delete</button>
+                        </td>
+                    </tr> -->
                 </table>
             </div>
         </div>
         <br><br><br><br><br>
-        <div id="user" class="content">
-                <h1>User Profile</h1>
-                <div class="user-name">
-                    <h2> User Name </h2>
-                </div>
-                <div class="user-details">
-                    <p>  <b> Company Name : </b>  Tavisca </p>
-                    <p>  <b> Favourite Color : </b>  Red </p>
-                    <p>  <b> Hobby : </b>  Music  </p>
-                    <p>  <b> Favourite Game : </b>  Chess </p>
-                    <p>  <b> City : </b>  Pune </p>
+        <div id="user" class="content" style="margin-top:40%;">
+            <h1>User Profile</h1>
+            <div class="user-name">
+                <h2> User Name </h2>
+            </div>
+            <div class="user-details">
+                <p>  <b> Company Name : </b>  Tavisca </p>
+                <p>  <b> Favourite Color : </b>  Red </p>
+                <p>  <b> Hobby : </b>  Music  </p>
+                <p>  <b> Favourite Game : </b>  Chess </p>
+                <p>  <b> City : </b>  Pune </p>
                     <p>  <b> State : </b>  Maharashtra   </p>
                     <p>  <b> Country : </b>  India   </p>
                 </div>
-        </div>
-        <br><br><br><br><br>
-        <div id="login" class="content">
+            </div>
+            <br><br><br><br><br>
+            <div id="login" class="content">
                 <h1> Login </h1>
                 <div class="login-div">
-                    <label >Email :</label>
-                    <input type="text" name="username" class="input-box" required><br>
-                    
-                    <label >Password :</label>
-                    <input type="password" name="password" class="input-box" required><br>
-                    <button class="submit-button">Submit</button><br>
+                    <form onsubmit="return validateForm()" name="login-form">
+                        <div class="login-grid-container">
+                            <label style="text-align: right;margin-top: 15px;" >Email :</label>
+                            <input type="text" name="username" class="input-box" >
+                            
+                            <label style="text-align: right;margin-top: 15px;">Password :</label>
+                            <input type="password" name="password" class="input-box" >
+                        </div>
+                        <input class="submit-button" type="submit" value="Submit">
+                    </form>
                 </div>
         </div>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -106,5 +91,6 @@
             <li><a href="contactus.html"> Contact Us </a></li>
         </ul>
     </footer>
+    <script src="main.js"></script>
 </body>
 </html>
