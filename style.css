@@ -33,9 +33,6 @@ footer ul li{
     
     font-size: 25px;  
 }
-.left-side-nav-bar{
-    
-}
 .left-side-nav-bar ul{
 list-style-type: none;
     margin: 0;
@@ -57,6 +54,7 @@ list-style-type: none;
 }
 .content{
     text-align: center;
+    margin-top: 68px;
 }
 .input-box{
     padding: 12px 5px;
@@ -75,7 +73,7 @@ list-style-type: none;
     background-color: #f1f1f1;
 }
 .to-do-table{
-    margin-left: 30%;
+    margin-left: 15%;
 }
 .list-items tr:nth-child(even){
     background-color: #f2f2f2;
@@ -123,4 +121,16 @@ list-style-type: none;
     cursor: pointer;
     border: 1px solid #dcdcdc;
     border-radius: 4px;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 15% 85%;
+}
+.left-nav{
+    margin-top: 61px;
+    background-color: #ccc;
+}
+.right-content{
+    margin-top: 61px;
+    background-color: aqua;
 }
