@@ -21,10 +21,13 @@
         </div>
         <div id="todo" class="content">
             <h1>To Do List</h1>
-            <input class="input-box" type="text" id="to-do-name" >
+            <input id="search-id" onkeyup="searchInput(this)" type="text" placeholder="Search..." class="input-box" >
+            <div id="suggestion-box">
+                
+            </div>
+            <input class="input-box" type="text" id="to-do-name" placeholder="Add to do in list...">
             <input onclick="AddToDo()" class="add-button" type="button" value="ADD" placeholder="Add To List">
             <div class="to-do-table">
-                
                 <table class="list-items" id="to-do-table-id">
                     <tr>
                         <th> Date </th>

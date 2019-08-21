@@ -1,3 +1,4 @@
+searchInput();
 function AddToDo()
 {
     var todo = document.getElementById("to-do-name");
@@ -89,4 +90,27 @@ function validateForm() {
     else if(!password.match(passwordformat)){
         alert("Weak Password , Password Must Contain atleast one Capital letter, one Small letter, one digit,one special character, length must be between 7 to 15 characters");
     }
-  }
+}
+function searchInput(inputNode){
+    var arr = ["vamsi","naveen","swarnesh","chaitanya","vasi","hello","hello world","hello people","hey"]
+    var suggestion_box = document.getElementById("suggestion-box");
+    suggestion_box.innerHTML = "";
+    var suggestion_array = [];
+    if(inputNode){
+        for (let index = 0; index < arr.length; index++) {
+            if(arr[index].substr(0,inputNode.value.length) == inputNode.value && inputNode.value.length > 0 ){
+                suggestion_array.push(arr[index]);
+            }
+        }
+    }
+    for (let index = 0; index < suggestion_array.length; index++) {
+        suggestion_box.appendChild(getSpanNode(suggestion_array[index]));
+        suggestion_box.appendChild(document.createElement("br"));
+    }
+}
+function getSpanNode(text){
+    var spanNode = document.createElement("span");
+    var spanTextNode = document.createTextNode(text);
+    spanNode.appendChild(spanTextNode);
+    return spanNode;
+}
