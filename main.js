@@ -6,6 +6,9 @@ let AddToDo = () =>
     {
         arr.push(todo.value);
         let table = document.getElementById("to-do-table-id");
+        table.style.display = "table-row";
+        let noToDo = document.getElementById("no-to-do-message");
+        noToDo.style.display = "none";
         let tr = document.createElement("tr");
         let tdDate = document.createElement("td");
         let tdName = document.createElement("td");
@@ -114,3 +117,14 @@ let getSpanNode = (text) =>{
     spanNode.appendChild(spanTextNode);
     return spanNode;
 }
+let onLoad = () =>{
+    let table = document.getElementById("to-do-table-id");
+    let noToDo = document.getElementById("no-to-do-message");
+    if(arr.length>0){
+        table.style.display = "table-row";
+        noToDo.style.display = "none";
+    }else{
+        table.style.display = "none";
+    }
+}
+onLoad();
