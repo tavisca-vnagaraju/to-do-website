@@ -1,8 +1,10 @@
+let arr = [];
 let AddToDo = () =>
 {
     let todo = document.getElementById("to-do-name");
     if(todo.value)
     {
+        arr.push(todo.value);
         let table = document.getElementById("to-do-table-id");
         let tr = document.createElement("tr");
         let tdDate = document.createElement("td");
@@ -40,6 +42,9 @@ let AddToDo = () =>
 }
 let deleteElement = (element) => {
     element.parentElement.parentElement.remove();
+    let todoName = element.parentElement.previousElementSibling.innerHTML;
+    let index = arr.indexOf(todoName);
+    arr.splice(index,1);
 }
 let getInputTextBox = () => {
     let inputBox = document.createElement("input");
@@ -93,20 +98,14 @@ let validateForm = () => {
     }
 }
 let searchInput = (inputNode) =>{
-    let arr = ["vamsi","naveen","swarnesh","chaitanya","vasi","hello","hello world","hello people","hey"]
-    let suggestion_box = document.getElementById("suggestion-box");
-    suggestion_box.innerHTML = "";
-    let suggestion_array = [];
-    if(inputNode){
-        for (let index = 0; index < arr.length; index++) {
-            if(arr[index].substr(0,inputNode.value.length) == inputNode.value && inputNode.value.length > 0 ){
-                suggestion_array.push(arr[index]);
-            }
+    let table = document.getElementById("to-do-table-id");
+    for (let index = 2; index < table.childNodes.length; index++) {
+        let name = table.childNodes[index].childNodes[1].innerHTML;
+        if(inputNode.value == name.substr(0,inputNode.value.length)){
+            table.childNodes[index].style.display = "table-row";
+        }else{
+            table.childNodes[index].style.display = "none";
         }
-    }
-    for (let index = 0; index < suggestion_array.length; index++) {
-        suggestion_box.appendChild(getSpanNode(suggestion_array[index]));
-        suggestion_box.appendChild(document.createElement("br"));
     }
 }
 let getSpanNode = (text) =>{
