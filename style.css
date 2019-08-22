@@ -9,6 +9,7 @@ a{
     padding: 10px;
     border-radius: 15px;
     border: 2px solid #7d7575;
+    width: 75%;
 }
 .input-box-in-to-do:focus{
     outline-offset: unset;
@@ -83,9 +84,6 @@ footer ul li{
 .add-button:hover{
     background-color: #f1f1f1;
 }
-.to-do-table{
-    margin-left: 15%;
-}
 .list-items tr th{
     background-color: #4f4f4f;
     color: #fff;
@@ -104,10 +102,10 @@ footer ul li{
 .list-items th,td{
     font-size: 20px;
     border: 1px solid #3f3f3f;
-    padding-left: 10px;
-    padding-right: 145px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 8px;
+}
+table{
+    width: 100%;
 }
 .user-name{
     border: 2px solid grey;

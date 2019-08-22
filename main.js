@@ -4,44 +4,47 @@ let AddToDo = () =>
     let todo = document.getElementById("to-do-name");
     if(todo.value)
     {
-        arr.push(todo.value);
-        let table = document.getElementById("to-do-table-id");
-        table.style.display = "table-row";
-        let noToDo = document.getElementById("no-to-do-message");
-        noToDo.style.display = "none";
-        let tr = document.createElement("tr");
-        let tdDate = document.createElement("td");
-        let tdName = document.createElement("td");
-        let tdEdit = document.createElement("td");
-        let editButton = document.createElement("button");
-        let deleteButton = document.createElement("button");
-        
-        let editButtonText = document.createTextNode("Edit");
-        editButton.appendChild(editButtonText);
-        editButton.classList.add("edit-button");
-        editButton.setAttribute("onclick","showTextBox(this)");
-        
-        let deleteButtonText = document.createTextNode("Delete");
-        deleteButton.appendChild(deleteButtonText);
-        deleteButton.classList.add("delete-button");
-        deleteButton.setAttribute("onclick","deleteElement(this)");
-        
-        
-        let date = new Date();
-        let dateNode = document.createTextNode(date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear());
-        let name = document.createTextNode(todo.value);
-    
-        tdDate.appendChild(dateNode);
-        tdName.appendChild(name);
-        tdEdit.appendChild(editButton);
-        tdEdit.appendChild(deleteButton);
-    
-        tr.appendChild(tdDate);
-        tr.appendChild(tdName);
-        tr.appendChild(tdEdit);
-    
-        table.appendChild(tr);
+        addTableRow(todo.value);
     }
+}
+let addTableRow = (todoName)=>{
+    arr.push(todoName);
+    let table = document.getElementById("to-do-table-id");
+    table.style.display = "table";
+    let noToDo = document.getElementById("no-to-do-message");
+    noToDo.style.display = "none";
+    let tr = document.createElement("tr");
+    let tdDate = document.createElement("td");
+    let tdName = document.createElement("td");
+    let tdEdit = document.createElement("td");
+    let editButton = document.createElement("button");
+    let deleteButton = document.createElement("button");
+    
+    let editButtonText = document.createTextNode("Edit");
+    editButton.appendChild(editButtonText);
+    editButton.classList.add("edit-button");
+    editButton.setAttribute("onclick","showTextBox(this)");
+    
+    let deleteButtonText = document.createTextNode("Delete");
+    deleteButton.appendChild(deleteButtonText);
+    deleteButton.classList.add("delete-button");
+    deleteButton.setAttribute("onclick","deleteElement(this)");
+    
+    
+    let date = new Date();
+    let dateNode = document.createTextNode(date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear());
+    let name = document.createTextNode(todoName);
+
+    tdDate.appendChild(dateNode);
+    tdName.appendChild(name);
+    tdEdit.appendChild(editButton);
+    tdEdit.appendChild(deleteButton);
+
+    tr.appendChild(tdDate);
+    tr.appendChild(tdName);
+    tr.appendChild(tdEdit);
+
+    table.appendChild(tr);
 }
 let deleteElement = (element) => {
     element.parentElement.parentElement.remove();
@@ -121,10 +124,23 @@ let onLoad = () =>{
     let table = document.getElementById("to-do-table-id");
     let noToDo = document.getElementById("no-to-do-message");
     if(arr.length>0){
-        table.style.display = "table-row";
+        table.style.display = "table";
         noToDo.style.display = "none";
     }else{
         table.style.display = "none";
+    }
+}
+let addToDoFromApi = ()=>{
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "https://jsonplaceholder.typicode.com/todos", true);
+    xmlhttp.send();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+            for(var i=0;i<myObj.length;i++){
+                addTableRow(myObj[i].title);
+            }
+        }    
     }
 }
 onLoad();
