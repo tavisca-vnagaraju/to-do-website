@@ -179,3 +179,6 @@ table{
     background-color: #d9534f;
     color: #fff;
 }
+#loading img{
+    width: 170px;
+}

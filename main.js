@@ -131,16 +131,24 @@ let onLoad = () =>{
     }
 }
 let addToDoFromApi = ()=>{
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", "https://jsonplaceholder.typicode.com/todos", true);
-    xmlhttp.send();
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var myObj = JSON.parse(this.responseText);
-            for(var i=0;i<myObj.length;i++){
-                addTableRow(myObj[i].title);
+    var loading = document.getElementById("loading");
+    let loadingNode = document.createElement("img");
+    loadingNode.setAttribute("src","loading.jpg");
+    loading.appendChild(loadingNode);
+    setTimeout(function(){
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", "https://jsonplaceholder.typicode.com/todos", true);
+        xmlhttp.send();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var myObj = JSON.parse(this.responseText);
+                for(var i=0;i<myObj.length;i++){
+                    addTableRow(myObj[i].title);
+                }
             }
-        }    
-    }
+            loading.style.display="none";
+        }
+    },2000);
+    
 }
 onLoad();
