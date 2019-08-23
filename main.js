@@ -135,6 +135,7 @@ let addToDoFromApi = ()=>{
     let loadingNode = document.createElement("img");
     loadingNode.setAttribute("src","loading.jpg");
     loading.appendChild(loadingNode);
+    loading.style.display="block";
     setTimeout(function(){
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.open("GET", "https://jsonplaceholder.typicode.com/todos", true);
@@ -147,6 +148,7 @@ let addToDoFromApi = ()=>{
                 }
             }
             loading.style.display="none";
+            loading.innerHTML="";
         }
     },2000);
     
