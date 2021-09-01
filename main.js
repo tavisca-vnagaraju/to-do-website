@@ -78,10 +78,11 @@ let showTextBox = (element) => {
 let saveText = (element) => {
     let inputTextNode = element.parentElement.previousElementSibling;
     let inputText = inputTextNode.childNodes[0].value;
-    
-    inputTextNode.innerHTML = inputText;
-    element.setAttribute("onclick","showTextBox(this)");
-    element.innerHTML = "Edit";
+    if(inputText){
+        inputTextNode.innerHTML = inputText;
+        element.setAttribute("onclick","showTextBox(this)");
+        element.innerHTML = "Edit";
+    }
 }
 let validateForm = () => {
     let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -131,7 +132,8 @@ let onLoad = () =>{
     }
 }
 let addToDoFromApi = ()=>{
-    var loading = document.getElementById("loading");
+    let loading = document.getElementById("loading");
+    loading.innerHTML = "";
     let loadingNode = document.createElement("img");
     loadingNode.setAttribute("src","loading.jpg");
     loading.appendChild(loadingNode);
