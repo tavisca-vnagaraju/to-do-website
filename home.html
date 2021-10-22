@@ -4,9 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Home</title>
 </head>
 <body>
-    Home Page
+    <header>
+        <span>Logo</span>
+    </header>
+    <div class="grid-container">
+        <div class="left-side-nav-bar">
+            <ul>
+                <li><a href="#todo"> To Do </a></li>
+                <li><a href="#user"> User </a></li>
+                <li><a href="#login"> Login </a></li>
+                <li onclick="addToDoFromApi()" style="cursor: pointer;" id="add-to-do-list-id">  Add To-Do List </li>
+            </ul>
+        </div>
+        <div id="todo" class="content">
+            <h1>To Do List</h1>
+            <!-- <input id="search-id" onkeyup="searchInput(this)" type="text" placeholder="Search..." class="input-box" > -->
+            <input class="input-box" onkeyup="searchInput(this)" type="text" id="to-do-name" placeholder="Add to do in list..." autocomplete="off">
+            <input onclick="AddToDo()" class="add-button" type="button" value="ADD" placeholder="Add To List">
+            <div id="no-to-do-message">
+                <h1> No To-do to Show add some To-do to list</h1>
+            </div>
+            <div id="loading">
+                
+            </div>
+            <div class="to-do-table">
+                <table class="list-items" id="to-do-table-id">
+                    <tr>
+                        <th> Date </th>
+                        <th> To Do </th>
+                        <th> Edit/Delete </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <br><br><br><br><br>
+        <div id="user" class="content" style="margin-top:40%;">
+            <h1>User Profile</h1>
+            <div class="user-name">
+                <h2> User Name </h2>
+            </div>
+            <div class="user-details">
+                <p>  <b> Company Name : </b>  Tavisca </p>
+                <p>  <b> Favourite Color : </b>  Red </p>
+                <p>  <b> Hobby : </b>  Music  </p>
+                <p>  <b> Favourite Game : </b>  Chess </p>
+                <p>  <b> City : </b>  Pune </p>
+                    <p>  <b> State : </b>  Maharashtra   </p>
+                    <p>  <b> Country : </b>  India   </p>
+                </div>
+            </div>
+            <br><br><br><br><br>
+            <div id="login" class="content">
+                <h1> Login </h1>
+                <div class="login-div">
+                    <form onsubmit="return validateForm()" name="login-form">
+                        <div class="login-grid-container">
+                            <label style="text-align: right;margin-top: 15px;" >Email :</label>
+                            <input type="text" name="username" class="input-box" autocomplete="off">
+                            
+                            <label style="text-align: right;margin-top: 15px;">Password :</label>
+                            <input type="password" name="password" class="input-box" >
+                        </div>
+                        <input class="submit-button" type="submit" value="Submit">
+                    </form>
+                </div>
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+    <footer>
+        <ul>
+            <li><a href="home.html"> Home </a></li>
+            <li><a href="aboutus.html"> About Us </a></li>
+            <li><a href="contactus.html"> Contact Us </a></li>
+        </ul>
+    </footer>
+    <script src="main.js"></script>
+    <script src="test.js"></script>
 </body>
 </html>

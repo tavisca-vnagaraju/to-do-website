@@ -1,0 +1,184 @@
+body{
+    font-size: 14px;
+    margin: 0px;
+}
+a{
+    text-decoration: none;
+}
+.input-box-in-to-do{
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid #7d7575;
+    width: 75%;
+}
+.input-box-in-to-do:focus{
+    outline-offset: unset;
+    outline: transparent;
+}
+header{
+    background-color: #efefef;
+    font-size: 2vw;
+    margin: 0px;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+}
+footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+footer ul{
+    list-style-type: none;
+    background-color: #efefef;
+    padding: 10px;
+    margin: 0px;
+}
+footer ul li{
+    background-color: #f1f1f1;
+    display: inline;
+    padding: 10px;
+    padding-right: 300px;
+    
+    font-size: 20px;  
+}
+.left-side-nav-bar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    background-color: #dcdcdc;
+    position: fixed;
+    top: 61px;
+    height: 100%;
+    overflow: auto;
+}
+.left-side-nav-bar ul li:hover{
+    background-color: #f9f9f9;
+}
+.left-side-nav-bar ul li{
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    border-bottom: 2px solid black;
+}
+.content{
+    text-align: center;
+    margin-top: 68px;
+}
+.input-box{
+    padding: 12px 5px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.add-button{
+    padding: 12px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+}
+.add-button:hover{
+    background-color: #f1f1f1;
+}
+.list-items tr th{
+    background-color: #4f4f4f;
+    color: #fff;
+}
+.list-items tr{
+    background-color: #fff;
+}
+.list-items tr:hover {
+    background-color: #ddd;
+}
+.list-items{
+    font-size: 20px;
+    border: 1px solid #3f3f3f;
+    border-collapse: collapse;
+}
+.list-items th,td{
+    font-size: 20px;
+    border: 1px solid #3f3f3f;
+    padding: 8px;
+}
+table{
+    width: 100%;
+}
+.user-name{
+    border: 2px solid grey;
+    width: 60%;
+    border-radius: 21px;
+    font-size: 21px;
+    margin-left: 21%;
+    padding: 10px 0px 10px 0px;
+}
+.user-details,.login-div{
+    border: 2px solid grey;
+    width: 60%;
+    border-radius: 21px;
+    font-size: 20px;
+    margin-left: 21%;
+    padding: 10px 0px 10px 0px;
+}
+.user-details p{
+    font-size: 20px;
+    padding-left: 20px;
+    text-align: left;
+}
+.submit-button{
+    padding: 12px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 15% 85%;
+}
+.left-nav{
+    margin-top: 61px;
+    background-color: #ccc;
+}
+.right-content{
+    margin-top: 61px;
+    background-color: aqua;
+}
+.login-grid-container{
+    display: grid;
+    grid-template-columns: 30% 50%;
+}
+.edit-button{
+    padding: 10px 20px;
+    border-radius: 11px;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: #5cb85c;
+    color: #fff;
+}
+.edit-button:hover{
+    background-color: #449d44;
+}
+.edit-button:focus{
+    outline:transparent;
+}
+.delete-button:focus{
+    outline:transparent;
+}
+.delete-button:hover{
+    background-color: #c9302c;
+}
+.delete-button{
+    padding: 10px 20px;
+    border-radius: 11px;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: #d9534f;
+    color: #fff;
+}
+#loading img{
+    width: 170px;
+}
